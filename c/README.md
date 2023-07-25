@@ -1,1 +1,1 @@
-simple c program
+simple c programs
