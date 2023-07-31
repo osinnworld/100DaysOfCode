@@ -15,7 +15,7 @@ int main(void)
     printf("Enter elements of the array:\n");
     for (i = 0; i < 2; i++)
     {
-        for (j = 0; j < 3; j++) // Fixed the condition here
+        for (j = 0; j < 3; j++)
         {
             scanf("%d", &a[i][j]);
         }
@@ -24,9 +24,9 @@ int main(void)
     printf("Matrix is:\n");
     for (i = 0; i < 2; i++)
     {
-        for (j = 0; j < 3; j++) // Fixed the condition here
+        for (j = 0; j < 3; j++)
         {
-            printf("%d \t", a[i][j]); // Removed the '&' from here
+            printf("%d \t", a[i][j]);
             sum += a[i][j];
         }
         printf("\n");
