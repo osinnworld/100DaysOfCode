@@ -1,4 +1,4 @@
-# Simple C Programs - ALX SE
+# Simple C Programs - Jenny's Lectures
 
 Welcome to the collection of simple C programs created as a result of the knowledge acquired from ALX Software Engineering (SE) training. This repository contains a set of basic C programs to help beginners understand various concepts in C programming.
 
