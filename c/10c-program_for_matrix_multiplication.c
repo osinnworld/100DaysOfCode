@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /**
  * main - Entry point of the program
  *
@@ -9,39 +7,67 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-    int a[3][3], b[3][3], c[3][3], i, j;
 
-    printf("Enter Value of a:\n");
-    for (i = 0; i < 3; i++)
-    {
-        for (j = 0; j < 3; j++)
-        {
-            scanf("%d", &a[i][j]);
+#include <stdio.h>
+
+#define n 3
+#define m 3
+#define p 3
+
+// Function to perform matrix multiplication
+void matrixMultiplication(int A[n][m], int B[m][p], int C[n][p]) {
+    int i, j, k;
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < p; j++) {
+            C[i][j] = 0;
+            for (k = 0; k < m; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
         }
     }
+}
 
-    printf("Enter Value of b:\n");
-    for (i = 0; i < 3; i++)
-    {
-        for (j = 0; j < 3; j++)
-        {
-            scanf("%d", &b[i][j]);
-        }
-    }
-
-    printf("Multiplication of matrix C:\n");
-    for (i = 0; i < 3; i++)
-    {
-        for (j = 0; j < 3; j++)
-        {
-            c[i][j] = (a[i][j]) * (b[j][i]);
-            printf("%d\t", c[i][j]);
+// Function to display a matrix
+void displayMatrix(int matrix[n][p]) {
+    int i, j;
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < p; j++) {
+            printf("%d\t", matrix[i][j]);
         }
         printf("\n");
     }
-
-    return (0);
 }
 
+int main() {
+    int A[n][m], B[m][p], C[n][p];
+    int i, j;
+
+    printf("Enter elements of Matrix A (%dx%d):\n", n, m);
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("Enter elements of Matrix B (%dx%d):\n", m, p);
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < p; j++) {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    // Perform matrix multiplication
+    matrixMultiplication(A, B, C);
+
+    printf("Matrix A:\n");
+    displayMatrix(A);
+
+    printf("\nMatrix B:\n");
+    displayMatrix(B);
+
+    printf("\nResulting Matrix C:\n");
+    displayMatrix(C);
+
+    return 0;
+}
