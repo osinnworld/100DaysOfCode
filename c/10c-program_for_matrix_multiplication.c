@@ -15,13 +15,17 @@
 #define p 3
 
 // Function to perform matrix multiplication
-void matrixMultiplication(int A[n][m], int B[m][p], int C[n][p]) {
+void matrixMultiplication(int A[n][m], int B[m][p], int C[n][p]) 
+{
     int i, j, k;
 
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < p; j++) {
+    for (i = 0; i < n; i++) 
+    {
+        for (j = 0; j < p; j++) 
+        {
             C[i][j] = 0;
-            for (k = 0; k < m; k++) {
+            for (k = 0; k < m; k++) 
+            {
                 C[i][j] += A[i][k] * B[k][j];
             }
         }
@@ -29,30 +33,38 @@ void matrixMultiplication(int A[n][m], int B[m][p], int C[n][p]) {
 }
 
 // Function to display a matrix
-void displayMatrix(int matrix[n][p]) {
+void displayMatrix(int matrix[n][p]) 
+{
     int i, j;
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < p; j++) {
+    for (i = 0; i < n; i++) 
+    {
+        for (j = 0; j < p; j++) 
+        {
             printf("%d\t", matrix[i][j]);
         }
         printf("\n");
     }
 }
 
-int main() {
+int main() 
+{
     int A[n][m], B[m][p], C[n][p];
     int i, j;
 
     printf("Enter elements of Matrix A (%dx%d):\n", n, m);
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < m; j++) {
+    for (i = 0; i < n; i++) 
+    {
+        for (j = 0; j < m; j++) 
+        {
             scanf("%d", &A[i][j]);
         }
     }
 
     printf("Enter elements of Matrix B (%dx%d):\n", m, p);
-    for (i = 0; i < m; i++) {
-        for (j = 0; j < p; j++) {
+    for (i = 0; i < m; i++) 
+    {
+        for (j = 0; j < p; j++) 
+        {
             scanf("%d", &B[i][j]);
         }
     }
