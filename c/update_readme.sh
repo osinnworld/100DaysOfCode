@@ -1,16 +1,13 @@
 #!/bin/bash
 
-# Check if the README.md file exists
-if [ -f "README.md" ]; then
-    # Delete everything below "## List of Programs"
-    sed -i '/## List of Programs/,$d' README.md
-else
-    # Create the README.md file with title block
-    echo -e "## List of Programs\n" > README.md
-fi
+# Delete the contents of README.md file
+> README.md
 
-# Append the output of ls -l to README.md
+# Add title block "## List of Programs" to README.md
+echo -e "## List of Programs\n" >> README.md
+
+# Append the output of ls -1 to README.md (listing file names with line numbers)
 ls -1 | nl >> README.md
 
-echo "ls -l output has been appended to README.md."
+echo "List of programs has been updated in README.md."
 
